@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  .col-sm-8.col-sm-offset-2
+    div#main-title
+      h1 Randamazon
+      h4 Randamazon is a thing that does a thing.
+    div#tag-line
+    form(method='POST', action='/')
+      .btn-group.budget(name='budget')
+        button.btn.btn-money(type='button', value='10') $10
+        button.btn.btn-money(type='button', value='20') $20
+        button.btn.btn-money(type='button', value='30') $30
+        button.btn.btn-money(type='button', value='40') $40
+        button.btn.btn-money(type='button', value='50') $50
+      .form-group.method
+        .btn-group.btn-group-justified
+          a.btn.btn-facebook(href='#')
+            | Wishlist
+          a.btn.btn-google-plus(href='#')
+            | Department
+      .form-group#wishlist
+        label.control-label(for='wishlist')
+        input.form-control(type='text', name='wishlist', id='wishlistValue', placeholder='Link')
+      .form-group#departments(style='display: none;')
+        label.control-label(for='department')
+        select.form-control(type='text', name='department', id='department', placeholder='department')
+          option(value='Books & Audible') Books & Audible
+          option(value='Movies, Music & Games') Movies, Music & Games
+          option(value='Electronics & Computers') Electronics & Computers
+          option(value='Home, Garden & Tools') Home, Garden & Tools
+          option(value='Beauty, Health & Grocery') Beauty, Health & Grocery
+          option(value='Toys, Kids & Baby') Toys, Kids & Baby
+          option(value='Clothing, Shoes & Jewelry') Clothing, Shoes & Jewelry
+          option(value='Sports & Outdoors') Sports & Outdoors
+          option(value='Automotive & Industrial') Automotive & Industrial
+      .form-group
+        input.form-control(type='hidden', name='_csrf', value=token)
+      .form-group#submitcontainer
+        button.btn.btn-primary#go(type='submit')
+          | Go
