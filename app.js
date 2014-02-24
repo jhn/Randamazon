@@ -51,10 +51,15 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(expressValidator());
 app.use(express.methodOverride());
+app.use(express.session({
+  secret: secrets.sessionSecret,
+}));
+app.use(express.csrf());
 app.use(passport.initialize());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 app.use(function(req, res) {
+  res.local.token = req.csrfToken();
   res.status(404);
   res.render('404');
 });
