@@ -4,6 +4,8 @@
 Randamazon is an application that buys random things from Amazon. Buyers will
 not know what they bought until the package arrives to their homes.
 
+![Main Page](https://raw.github.com/jhn/Randamazon/master/ScreenShot.png)
+
 ### Operation
 1. Choose a budget.
 2. Select either an Amazon wish list or an Amazon department to buy from.
